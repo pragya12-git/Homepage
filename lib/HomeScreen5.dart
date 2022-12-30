@@ -1,6 +1,3 @@
-import 'dart:ffi';
-
-import 'package:app2/HomeScreen6.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -43,17 +40,7 @@ class _Screen5State extends State<Screen5> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Settings"),
-        actions: [
-          IconButton(
-              onPressed: (() {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Screen6(),
-                    ));
-              }),
-              icon: Icon(Icons.settings))
-        ],
+        actions: [],
       ),
       body: Column(
         children: <Widget>[
@@ -84,9 +71,22 @@ class _Screen5State extends State<Screen5> {
                         });
                       },
                     ),
+                    subtitle: ElevatedButton(
+                        onPressed: (() {
+                          delete();
+                        }),
+                        child: Text("clear")),
                   ))),
         ],
       ),
     );
+  }
+
+  delete() async {
+    _preferences = await SharedPreferences.getInstance();
+
+    await _preferences!.clear();
+
+    setState(() {});
   }
 }

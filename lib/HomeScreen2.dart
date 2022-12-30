@@ -35,7 +35,7 @@ class _Screen1State extends State<Screen1> {
                         builder: (context) => Screen(),
                       ));
                 }),
-                icon: Icon(Icons.person)),
+                icon: Icon(Icons.logout)),
           ],
         ),
         body: Padding(
