@@ -53,7 +53,7 @@ class _Screen1State extends State<Screen1> {
                   ),
                 ],
               ),
-              Icon(Icons.person),
+              Icon(Icons.logout),
               TextFormField(
                 decoration: InputDecoration(hintText: widget.Username),
               ),
